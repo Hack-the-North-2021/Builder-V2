@@ -2,6 +2,7 @@
 
 
 #include "Game/GameComponents/CameraFocusComponent.h"
+#include "Game/GameComponents/PlayerMovementComponent.h"
 
 
 using namespace Game;
@@ -15,6 +16,10 @@ PlayerEntity::PlayerEntity()
 	m_renderComponent->SetTexture(GameEngine::eTexture::Player);
 	SetSize(sf::Vector2f(70, 80));
 	m_renderComponent->SetZLevel(2);
+
+    playerMovementComponent = AddComponent<PlayerMovementComponent>();
+    playerMovementComponent->SetVelocity(69);
+
 
 
 
