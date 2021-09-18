@@ -165,6 +165,9 @@ XCOPY "$(SolutionDir)..\SFML-2.5.0\bin" "$(TargetDir)" /S /Y /I</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Source\GameEngine\Util\randgen.cc" />
+    <ClCompile Include="Source\Game\GameEntities\ResourceEntity.cpp" />
+    <ClCompile Include="Source\Game\GameEntities\ResourceManagerEntity.cpp" />
     <ClCompile Include="Source\Game\GameEntities\MapEntity.cpp" />
     <ClCompile Include="Source\GameEngine\EntitySystem\Components\ButtonComponent.cpp" />
     <ClCompile Include="Source\GameEngine\EntitySystem\Components\TextRenderComponent.cpp" />
@@ -191,6 +194,9 @@ XCOPY "$(SolutionDir)..\SFML-2.5.0\bin" "$(TargetDir)" /S /Y /I</Command>
     <ClCompile Include="Source\GameEngine\EntitySystem\Components\SpriteRenderComponent.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Source\GameEngine\Util\randgen.h" />
+    <ClInclude Include="Source\Game\GameEntities\ResourceEntity.h" />
+    <ClInclude Include="Source\Game\GameEntities\ResourceManagerEntity.h" />
     <ClInclude Include="Source\Game\GameEntities\MapEntity.h" />
     <ClInclude Include="Source\GameEngine\EntitySystem\Components\ButtonComponent.h" />
     <ClInclude Include="Source\GameEngine\EntitySystem\Components\TextRenderComponent.h" />

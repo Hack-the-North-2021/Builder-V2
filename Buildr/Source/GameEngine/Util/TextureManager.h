@@ -15,6 +15,10 @@ namespace GameEngine
 			Tileset,
 			MAP,
 			Particles,
+			FOOD,
+			ROCK,
+			TREE,
+			BRONZE,
 			Count,
 		};
 	}	
@@ -25,8 +29,12 @@ namespace GameEngine
 		{
 		case eTexture::Player:    return "player.png";
 		case eTexture::Tileset:   return "player.png";
+		case eTexture::Particles:   return "player.png";
 		case eTexture::MAP:		  return "/map/MapFinal.png";
-		case eTexture::Particles: return "player.png";
+		case eTexture::FOOD:	  return "/resource/food.png";
+		case eTexture::ROCK:	  return "/resource/rock.png";
+		case eTexture::TREE:	  return "/resource/tree.png";
+		case eTexture::BRONZE:	  return "/resource/bronze.png";
 		default:       return "UnknownTexType";
 		}
 	}
