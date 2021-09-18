@@ -13,7 +13,7 @@ namespace GameEngine
 			None = -1,
 			Player = 0,
 			Tileset,
-			BG,
+			MAP,
 			Particles,
 			Count,
 		};
@@ -25,7 +25,7 @@ namespace GameEngine
 		{
 		case eTexture::Player:    return "player.png";
 		case eTexture::Tileset:   return "player.png";
-		case eTexture::BG:		  return "/map/MapFinal.png";
+		case eTexture::MAP:		  return "/map/MapFinal.png";
 		case eTexture::Particles: return "player.png";
 		default:       return "UnknownTexType";
 		}

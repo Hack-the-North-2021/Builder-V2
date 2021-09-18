@@ -7,6 +7,7 @@
 #include "GameEngine/EntitySystem/Components/TextRenderComponent.h"
 #include "GameEngine/Util/CameraManager.h"
 #include "Game/GameEntities/PlayerEntity.h"
+#include "Game/GameEntities/MapEntity.h"
 
 
 
@@ -44,15 +45,9 @@ void GameBoard::Update()
 
 void GameBoard::CreateBackGround()
 {
-	GameEngine::Entity* bgEntity = new GameEngine::Entity();
-	GameEngine::SpriteRenderComponent* render = bgEntity->AddComponent<GameEngine::SpriteRenderComponent>();
-	render->SetTexture(GameEngine::eTexture::BG);
-	render->SetZLevel(0);
-	bgEntity->SetPos(sf::Vector2f(250.f, 250.f));
-	bgEntity->SetSize(sf::Vector2f(1200.f, 800.f));
-	GameEngine::GameEngineMain::GetInstance()->AddEntity(bgEntity);
-
-	map = bgEntity;
+	GameEngine::Entity* mapEntity = new MapEntity();
+	GameEngine::GameEngineMain::GetInstance()->AddEntity(mapEntity);
+	map = mapEntity;
 }
 
 
