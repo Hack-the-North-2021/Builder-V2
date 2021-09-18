@@ -25,6 +25,7 @@ GameBoard::GameBoard()
     //player->SetSize(sf::Vector2f(200.f, 200.f));
 
 	resourceManager = new ResourceManagerEntity();
+
 	map = new MapEntity();
 
 }

@@ -1,6 +1,6 @@
 #include "ResourceEntity.h"
 #include "GameEngine/GameEngineMain.h"
-
+#include <iostream>
 using namespace Game;
 
 ResourceEntity::ResourceEntity(int x, int y, GameEngine::eTexture::type resourceType)
@@ -13,7 +13,7 @@ ResourceEntity::ResourceEntity(int x, int y, GameEngine::eTexture::type resource
 	m_renderComponent->SetTexture(resourceType);
 	SetPos(sf::Vector2f(x, y));
 	m_renderComponent->SetZLevel(4);
-	GameEngine::GameEngineMain::GetInstance()->AddEntity(this);
+	GameEngine::GameEngineMain::GetInstance()->AddEntity(new Entity());
 }
 
 
@@ -34,6 +34,7 @@ void ResourceEntity::OnAddToWorld()
 
 void ResourceEntity::OnRemoveFromWorld()
 {
+
 	Entity::OnRemoveFromWorld();
 }
 

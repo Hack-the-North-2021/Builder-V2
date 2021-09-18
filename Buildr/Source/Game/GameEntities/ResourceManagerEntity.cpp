@@ -1,6 +1,6 @@
 #include "ResourceManagerEntity.h"
 #include "GameEngine/Util/randgen.h"
-
+#include <iostream>
 using namespace Game;
 
 ResourceManagerEntity::ResourceManagerEntity()
@@ -12,6 +12,8 @@ ResourceManagerEntity::ResourceManagerEntity()
 		int type = RandGen::randint(0, 3);
 		ResourceEntity* currentResource = new ResourceEntity(x, y, types[type]);
 		resourceEntities.push_back(currentResource);
+
+
 
 	}
 
