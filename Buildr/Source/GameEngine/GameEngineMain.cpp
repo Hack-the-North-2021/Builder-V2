@@ -207,7 +207,6 @@ void GameEngineMain::RemovePendingEntities()
     m_entitiesToRemove.clear();
 }
 
-
 void GameEngineMain::UpdateWindowEvents()
 {
     if (!m_renderWindow)
@@ -226,6 +225,7 @@ void GameEngineMain::UpdateWindowEvents()
         {
             ButtonManager::GetInstance()->OnMouseButtonPressedEvent(event.mouseButton.x, event.mouseButton.y);
         }
+
     }
 }
 
