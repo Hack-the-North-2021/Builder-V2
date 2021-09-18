@@ -17,8 +17,9 @@ PlayerEntity::PlayerEntity()
 	m_renderComponent->SetZLevel(2);
 
 
+
 	//Camera control
-	// AddComponent<CameraFocusComponent>();
+	AddComponent<CameraFocusComponent>();
 }
 
 
