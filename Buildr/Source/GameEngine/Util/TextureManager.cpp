@@ -28,6 +28,7 @@ void TextureManager::LoadTextures()
 		filePath.append("Resources/img/");
 		filePath.append(GetPath((eTexture::type)a));
 		texture->loadFromFile(filePath);
+		
 
 		m_textures[a] = texture;
 	}
@@ -49,10 +50,13 @@ namespace TextureHelper
     {
         switch (texture)
         {
-        case  GameEngine::eTexture::Player:  return sf::Vector2f(32.f, 32.f);
+		case  GameEngine::eTexture::Player:  return sf::Vector2f(700.f,800.f);
         case  GameEngine::eTexture::Tileset: return sf::Vector2f(32.f, 32.f);
-        case  GameEngine::eTexture::BG:	     return sf::Vector2f(500.f, 500.f);
-        case  GameEngine::eTexture::Particles: return sf::Vector2f(31.f, 32.f);
+        case  GameEngine::eTexture::MAP:	     return sf::Vector2f(8000.f, 12000.f);
+        case  GameEngine::eTexture::FOOD:	     return sf::Vector2f(50.f, 50.f);
+        case  GameEngine::eTexture::ROCK:	     return sf::Vector2f(50.f, 50.f);
+        case  GameEngine::eTexture::TREE:	     return sf::Vector2f(50.f, 50.f);
+        case  GameEngine::eTexture::BRONZE:	     return sf::Vector2f(50.f, 50.f);
         default:							 return sf::Vector2f(-1.f, -1.f);
         }
     }

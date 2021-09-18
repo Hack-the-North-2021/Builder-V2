@@ -3,6 +3,8 @@
 
 #include <SFML/System/Vector2.hpp>
 #include <vector>
+#include "Game/GameEntities/ResourceManagerEntity.h"
+#include "Game/GameEntities/MapEntity.h"
 
 namespace Game
 {
@@ -26,7 +28,8 @@ namespace Game
 		void UpdateBackGround();
 
 		PlayerEntity* player;
-		GameEngine::Entity* map;
+		MapEntity* map;
+		ResourceManagerEntity* resourceManager;
 
 		
 	};
