@@ -13,7 +13,7 @@ PlayerEntity::PlayerEntity()
 	//Render 
 	m_renderComponent = AddComponent<GameEngine::SpriteRenderComponent>();
 	m_renderComponent->SetTexture(GameEngine::eTexture::Player);
-	SetSize(sf::Vector2f(200, 200));
+	SetSize(sf::Vector2f(70, 80));
 	m_renderComponent->SetZLevel(2);
 
 

@@ -23,7 +23,7 @@ namespace GameEngine
 	{
 		switch (texture)
 		{
-		case eTexture::Player:    return "player.jpg";
+		case eTexture::Player:    return "player.png";
 		case eTexture::Tileset:   return "player.png";
 		case eTexture::BG:		  return "/map/MapFinal.png";
 		case eTexture::Particles: return "player.png";
