@@ -16,7 +16,21 @@ namespace Game
 		virtual ~GameBoard();
 
 		void Update();		
+
+		
+
 		bool IsGameOver() { return false; }
+
+	protected: 
+		void CreateBackGround();
+		void UpdateBackGround();
+
+		PlayerEntity* player;
+		GameEngine::Entity* map;
+		bool isGameOver;
+		float playerX;
+		float playerY;
+		
 	};
 }
 
