@@ -66,7 +66,7 @@ void RenderComponent::Render(sf::RenderTarget* target)
 
 		//Debug draw of entity pos
 
-		sf::RectangleShape shape(GetEntity()->GetSize());
+		sf::RectangleShape shape(sf::Vector2f(5.f, 5.f));
 		sf::Vector2f pos = GetEntity()->GetPos();
 		pos -= shape.getSize() / 2.f;
 		shape.setFillColor(m_fillColor);

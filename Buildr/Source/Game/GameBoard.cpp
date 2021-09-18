@@ -5,13 +5,14 @@
 #include "GameEngine/EntitySystem/Components/CollidableComponent.h"
 #include "GameEngine/EntitySystem/Components/SpriteRenderComponent.h"
 #include "GameEngine/EntitySystem/Components/TextRenderComponent.h"
-#include "GameEngine/EntitySystem/Components/RenderComponent.h"
 #include "GameEngine/Util/CameraManager.h"
 #include "Game/GameEntities/PlayerEntity.h"
-#include <Game/GameComponents/placeButton.h>
 
 
 using namespace Game;
+
+
+
 
 
 GameBoard::GameBoard()
@@ -25,21 +26,8 @@ GameBoard::GameBoard()
 
 	resourceManager = new ResourceManagerEntity();
 
-  map = new MapEntity();
-	GameEngine::Entity* button_test = new GameEngine::Entity();
-	GameEngine::GameEngineMain::GetInstance()->AddEntity(button_test);
+	map = new MapEntity();
 
-	
-
-
-	button_test->SetPos(sf::Vector2(200.f, 500.f));
-	button_test->SetSize(sf::Vector2(100.f, 100.f));
-
-	GameEngine::RenderComponent* render = button_test->AddComponent<GameEngine::RenderComponent>();
-	render->SetFillColor(sf::Color(100, 100, 200));
-	
-	placeButton *buttonComp = button_test->AddComponent<placeButton>();
-	
 }
 
 

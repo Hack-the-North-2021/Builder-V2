@@ -185,8 +185,6 @@ XCOPY "$(SolutionDir)..\SFML-2.5.0\bin" "$(TargetDir)" /S /Y /I</Command>
     <ClCompile Include="Source\GameEngine\EntitySystem\Components\RenderComponent.cpp" />
     <ClCompile Include="Source\GameEngine\EntitySystem\Component.cpp" />
     <ClCompile Include="Source\Game\GameComponents\CameraFocusComponent.cpp" />
-    <ClCompile Include="Source\Game\GameComponents\placeButton.cpp" />
-    <ClCompile Include="Source\Game\GameComponents\mouseFollowComp.cpp" />
     <ClCompile Include="Source\Game\GameEntities\PlayerEntity.cpp" />
     <ClCompile Include="Source\Game\GameEntities\ResourceEntity.cpp" />
     <ClCompile Include="Source\Game\GameEntities\ResourceManagerEntity.cpp" />
@@ -221,8 +219,6 @@ XCOPY "$(SolutionDir)..\SFML-2.5.0\bin" "$(TargetDir)" /S /Y /I</Command>
     <ClInclude Include="Source\GameEngine\Util\TextureManager.h" />
     <ClInclude Include="Source\GameEngine\EntitySystem\Components\SpriteRenderComponent.h" />
     <ClInclude Include="Source\Game\GameComponents\CameraFocusComponent.h" />
-    <ClInclude Include="Source\Game\GameComponents\mouseFollowComp.h" />
-    <ClInclude Include="Source\Game\GameComponents\placeButton.h" />
     <ClInclude Include="Source\Game\GameEntities\PlayerEntity.h" />
     <ClInclude Include="Source\Game\GameEntities\ResourceEntity.h" />
     <ClInclude Include="Source\Game\GameEntities\ResourceManagerEntity.h" />
