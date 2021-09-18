@@ -23,7 +23,7 @@ GameBoard::GameBoard()
     player = new PlayerEntity();
 	GameEngine::GameEngineMain::GetInstance()->AddEntity(player);
 	player->SetPos(sf::Vector2f(50.f, 50.f));
-    player->SetSize(sf::Vector2f(40.f, 40.f));
+    player->SetSize(sf::Vector2f(200.f, 200.f));
 	CreateBackGround();
 
 
@@ -49,7 +49,7 @@ void GameBoard::CreateBackGround()
 	render->SetTexture(GameEngine::eTexture::BG);
 	render->SetZLevel(0);
 	bgEntity->SetPos(sf::Vector2f(250.f, 250.f));
-	bgEntity->SetSize(sf::Vector2f(12000.f, 8000.f));
+	bgEntity->SetSize(sf::Vector2f(1200.f, 800.f));
 	GameEngine::GameEngineMain::GetInstance()->AddEntity(bgEntity);
 
 	map = bgEntity;

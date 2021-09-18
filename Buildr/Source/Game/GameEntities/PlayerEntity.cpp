@@ -1,7 +1,7 @@
 #include "PlayerEntity.h"
 
 
-#include "Game/GameComponents/PlayerCameraComponent.h"
+#include "Game/GameComponents/CameraFocusComponent.h"
 
 
 using namespace Game;
@@ -13,11 +13,12 @@ PlayerEntity::PlayerEntity()
 	//Render 
 	m_renderComponent = AddComponent<GameEngine::SpriteRenderComponent>();
 	m_renderComponent->SetTexture(GameEngine::eTexture::Player);
+	SetSize(sf::Vector2f(200, 200));
 	m_renderComponent->SetZLevel(2);
 
 
 	//Camera control
-	AddComponent<PlayerCameraComponent>();
+	// AddComponent<CameraFocusComponent>();
 }
 
 
@@ -40,3 +41,4 @@ void PlayerEntity::OnRemoveFromWorld()
 {
 	Entity::OnRemoveFromWorld();
 }
+

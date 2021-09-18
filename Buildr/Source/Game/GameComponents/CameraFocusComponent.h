@@ -3,11 +3,11 @@
 
 namespace Game
 {
-	class PlayerCameraComponent : public GameEngine::Component
+	class CameraFocusComponent : public GameEngine::Component
 	{
 	public:
-		PlayerCameraComponent();
-		virtual ~PlayerCameraComponent();
+		CameraFocusComponent();
+		virtual ~CameraFocusComponent();
 
 		virtual void Update() override;
 		virtual void OnAddToWorld() override;

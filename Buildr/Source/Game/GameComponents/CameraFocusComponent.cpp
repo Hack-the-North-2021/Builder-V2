@@ -5,13 +5,13 @@
 
 using namespace Game;
 
-PlayerCameraComponent::CameraFocusComponent()
+CameraFocusComponent::CameraFocusComponent()
 {
 
 }
 
 
-PlayerCameraComponent::~CameraFocusComponent()
+CameraFocusComponent::~CameraFocusComponent()
 {
 
 }
