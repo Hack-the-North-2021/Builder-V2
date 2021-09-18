@@ -11,17 +11,20 @@
 
 using namespace Game;
 
+
+
+
+
 GameBoard::GameBoard()
 	: player(nullptr)
 	, map(nullptr)
-	, isGameOver(false)
-	, playerX(50.f)
-	, playerY(50.f)
-
 {
-	// player = new PlayerEntity();
-	// GameEngine::GameEngineMain::GetInstance()->AddEntity(player);
+    player = new PlayerEntity();
+	GameEngine::GameEngineMain::GetInstance()->AddEntity(player);
+	player->SetPos(sf::Vector2f(50.f, 50.f));
+    player->SetSize(sf::Vector2f(40.f, 40.f));
 	CreateBackGround();
+
 
 }
 

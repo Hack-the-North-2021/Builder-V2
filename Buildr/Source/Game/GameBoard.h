@@ -27,9 +27,7 @@ namespace Game
 
 		PlayerEntity* player;
 		GameEngine::Entity* map;
-		bool isGameOver;
-		float playerX;
-		float playerY;
+
 		
 	};
 }
