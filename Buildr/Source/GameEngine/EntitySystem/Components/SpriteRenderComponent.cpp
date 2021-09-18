@@ -1,7 +1,8 @@
 #include "SpriteRenderComponent.h"
 
 #include "GameEngine/GameEngineMain.h"
-
+#include "GameEngine/Util/CameraManager.h"
+#include <iostream>
 using namespace GameEngine;
 
 SpriteRenderComponent::SpriteRenderComponent()	
@@ -100,6 +101,19 @@ void SpriteRenderComponent::SetTexture(eTexture::type texture)
 
 void SpriteRenderComponent::Render(sf::RenderTarget* target)
 {
+	sf::Vector2f camPos = GameEngine::CameraManager::GetInstance()->GetCameraView().getCenter();
+	sf::Vector2f spritePos = GetEntity()->GetPos();
+
+	if (GetEntity()->GetEntityTag() != "MAP" && GetEntity()->GetEntityTag() != "Player") {
+		if (camPos.x - 600 <= spritePos.x && spritePos.x <= camPos.x + 600 && camPos.y - 400 <= spritePos.y && spritePos.y <= camPos.y + 400) {
+
+		}
+		else {
+			return;
+		}
+	}
+
+	
 	RenderComponent::Render(target);
 
 	if (!target)
@@ -110,6 +124,8 @@ void SpriteRenderComponent::Render(sf::RenderTarget* target)
 	//After the values are set, render itself is pretty simple
 	m_sprite.setPosition(GetEntity()->GetPos());
 	m_sprite.setRotation(GetEntity()->GetRot());
+	
+	
 
 
 	target->draw(m_sprite);
