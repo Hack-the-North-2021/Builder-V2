@@ -6,7 +6,7 @@
 #include "GameEngine/EntitySystem/Components/SpriteRenderComponent.h"
 #include "GameEngine/EntitySystem/Components/TextRenderComponent.h"
 #include "GameEngine/Util/CameraManager.h"
-// #include "Game/GameEntities/PlayerEntity.h"
+#include "Game/GameEntities/PlayerEntity.h"
 
 
 
@@ -20,10 +20,10 @@ GameBoard::GameBoard()
 	: player(nullptr)
 	, map(nullptr)
 {
-    // player = new PlayerEntity();
-	// GameEngine::GameEngineMain::GetInstance()->AddEntity(player);
-	// player->SetPos(sf::Vector2f(50.f, 50.f));
-    // player->SetSize(sf::Vector2f(40.f, 40.f));
+    player = new PlayerEntity();
+	GameEngine::GameEngineMain::GetInstance()->AddEntity(player);
+	player->SetPos(sf::Vector2f(50.f, 50.f));
+    player->SetSize(sf::Vector2f(40.f, 40.f));
 	CreateBackGround();
 
 
