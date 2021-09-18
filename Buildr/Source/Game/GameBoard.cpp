@@ -7,7 +7,8 @@
 #include "GameEngine/EntitySystem/Components/TextRenderComponent.h"
 #include "GameEngine/Util/CameraManager.h"
 #include "Game/GameEntities/PlayerEntity.h"
-// #include "Game/GameEntities/ObstacleEntity.h"
+
+
 
 using namespace Game;
 
@@ -38,21 +39,7 @@ GameBoard::~GameBoard()
 void GameBoard::Update()
 {	
 	float dt = GameEngine::GameEngineMain::GetInstance()->GetTimeDelta();
-	if (!isGameOver)
-	{
-		/*
-		m_lastObstacleSpawnTimer -= dt;
-		if (m_lastObstacleSpawnTimer <= 0.f)
-		{
-			SpawnNewRandomObstacles();
-			SpawnNewRandomTiledObstacles();
-		}
-		*/
-
-		// UpdateObstacles(dt);
-		UpdateBackGround();
-		// UpdatePlayerDying();
-	}
+	
 }
 
 void GameBoard::CreateBackGround()
@@ -76,7 +63,5 @@ void GameBoard::UpdateBackGround()
 
 	if (!GameEngine::CameraManager::IsFollowCameraEnabled())
 		return;
-
-	map->SetPos(sf::Vector2f(playerX, playerY));
 }
 
