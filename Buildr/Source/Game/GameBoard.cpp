@@ -15,9 +15,6 @@
 using namespace Game;
 
 
-
-
-
 GameBoard::GameBoard()
 	: player(nullptr)
 	, map(nullptr)
