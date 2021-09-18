@@ -9,8 +9,6 @@ using namespace Game;
 
 PlayerEntity::PlayerEntity()
 {
-
-
 	//Render 
 	m_renderComponent = AddComponent<GameEngine::SpriteRenderComponent>();
 	m_renderComponent->SetTexture(GameEngine::eTexture::Player);
