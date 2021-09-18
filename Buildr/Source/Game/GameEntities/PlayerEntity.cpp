@@ -18,7 +18,8 @@ PlayerEntity::PlayerEntity()
 	m_renderComponent->SetZLevel(2);
 
     playerMovementComponent = AddComponent<PlayerMovementComponent>();
-    playerMovementComponent->SetVelocity(69);
+    playerMovementComponent->SetVelocity(1.f);
+
 
 
 

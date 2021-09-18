@@ -6,23 +6,22 @@
 #include "GameEngine/Util/TextureManager.h"
 #include "GameEngine/Util/AnimationManager.h"
 
-#include "Game/GameComponents/PlayerSoundComponent.h"
-
 #include <SFML/Window/Keyboard.hpp>
 #include <cmath>
+#include <iostream>
 
 using namespace Game;
-Vector2 normalize(const Vector2& source)
-{
-    float length = sqrt((source.x * source.x) + (source.y * source.y));
-    if (length != 0)
-        return Vector2(source.x / length, source.y / length);
-    else
-        return source;
-}
 
+sf::Vector2f normalize(const sf::Vector2f source)
+{
+	float length = sqrt((source.x * source.x) + (source.y * source.y));
+	if (length != 0)
+		return sf::Vector2f(source.x / length, source.y / length);
+	else
+		return source;
+}
 PlayerMovementComponent::PlayerMovementComponent()
-    :velocity
+    :velocity(0)
 {
 
 
@@ -71,10 +70,22 @@ void PlayerMovementComponent::Update()
 		wantedVel.y += dt;
 
 	}
-    float length = normalize(wantedVel);
+    wantedVel= normalize(wantedVel);
     wantedVel.x *=velocity;
     wantedVel.y *=velocity;
 
 	GetEntity()->SetPos(GetEntity()->GetPos() + wantedVel);
 
+	int mx = sf::Mouse::getPosition(*(GameEngine::GameEngineMain::GetInstance()->m_renderWindow)).x;
+	int my = sf::Mouse::getPosition(*(GameEngine::GameEngineMain::GetInstance()->m_renderWindow)).y;
+	
+	sf::Vector2f playerToMouse = sf::Vector2f(mx - 600, my - 400);
+	float rot = atan2(playerToMouse.y, playerToMouse.x) * 180/ 3.14159265f;
+	GetEntity()->SetRotation(rot-90);
+
+
+	
+
+
 }
+

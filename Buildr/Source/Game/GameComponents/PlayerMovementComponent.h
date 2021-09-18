@@ -18,7 +18,7 @@ namespace Game
 		virtual void OnAddToWorld() override;
 
 	private:
-		float velocity=0;
+		float velocity;
 	};
 }
 
