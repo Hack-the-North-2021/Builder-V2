@@ -67,11 +67,27 @@ void PlayerEntity::Attack() {
 					rock += 1;
 					break;
 				}
-				case GameEngine::eTexture::WALL:
+				case GameEngine::eTexture::GrassWall:
 				{
-					std::cout << "break wall" << std::endl;
+					std::cout << "break grass wall" << std::endl;
 					break;
 				}
+					case GameEngine::eTexture::WoodWall:
+				{
+					std::cout << "break woodk wall" << std::endl;
+					break;
+				}
+					case GameEngine::eTexture::RockWall:
+				{
+					std::cout << "break rock wall" << std::endl;
+					break;
+				}
+					case GameEngine::eTexture::BrickWall:
+				{
+					std::cout << "brick wall" << std::endl;
+					break;
+				}
+	
 			}
 			resource->Hit();
 			break;

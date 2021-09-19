@@ -24,7 +24,7 @@ namespace Game
 		void Build(int x);
 
 	protected:
-		const vector<GameEngine::eTexture::type> types = { GameEngine::eTexture::WALL };
+		const vector<GameEngine::eTexture::type> types = { GameEngine::eTexture::GrassWall, GameEngine::eTexture::WoodWall, GameEngine::eTexture::RockWall, GameEngine::eTexture::BrickWall };
 	private:
 		BuildingSpawnerEntity();
 		static BuildingSpawnerEntity* sm_instance;
