@@ -23,9 +23,9 @@ GameBoard::GameBoard()
 
 	GameEngine::GameEngineMain::GetInstance()->AddEntity(player);
 	player->SetPos(sf::Vector2f(200.f, 200.f));
+	GameEngine::Entity* point = new ResourceUIEntity(GameEngine::eTexture::FOOD, 0);
 	UI = new GameEngine::Entity();
 	UI->SetPos(GameEngine::CameraManager::GetInstance()->GetCameraView().getCenter());
-	GameEngine::Entity* point = new ResourceUIEntity(GameEngine::eTexture::FOOD, 0);
 	point->SetParent(UI);
 	point->SetLocalPosOffset(sf::Vector2f(300.f, 0.f));
 	point = new ResourceUIEntity(GameEngine::eTexture::BRONZE, 100.f);
@@ -37,8 +37,6 @@ GameBoard::GameBoard()
 	point = new ResourceUIEntity(GameEngine::eTexture::TREE, 300.f);
 	point->SetParent(UI);
 	point->SetLocalPosOffset(sf::Vector2f(300.f, 300.f));
-
-
 
 	GameEngine::GameEngineMain::GetInstance()->AddEntity(UI);
 
