@@ -18,6 +18,7 @@ Entity::Entity()
 Entity::~Entity()
 {
     DestroyComponents();
+
 }
 
 

@@ -1,5 +1,5 @@
 #include "Resource-Component.h"
-
+#include "GameEngine/GameEngineMain.h"
 using namespace Game;
 #include <iostream>
 Resourcecomponent::Resourcecomponent() :health(0)
@@ -13,6 +13,9 @@ Resourcecomponent::~Resourcecomponent()
 void Resourcecomponent::Hit()
 {
 	health -= 20;
+	if (health <= 0) {
+		GameEngine::GameEngineMain::GetInstance()->RemoveEntity(GetEntity());
+	}
 
 	
 }
