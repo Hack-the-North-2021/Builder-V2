@@ -33,6 +33,8 @@ PlayerEntity::PlayerEntity():tree(0),rock(0),food(0),bronze(0)
 }
 void PlayerEntity::Attack() {
 	std::vector<GameEngine::Entity*> resources = GameEngine::GameEngineMain::GetInstance()->GetEntitiesByTag("Resource");
+	std::vector<GameEngine::Entity*> buildings = GameEngine::GameEngineMain::GetInstance()->GetEntitiesByTag("Building");
+	resources.insert(resources.end(), buildings.begin(), buildings.end());
 	for (GameEngine::Entity* e : resources) {
 		if (e->GetEntityTag() == "MAP") {
 			continue;
@@ -43,7 +45,7 @@ void PlayerEntity::Attack() {
 			pow(e->GetPos().y - GetPos().y, 2));
 		if (dist < 100) {
 			Resourcecomponent* resource = e->GetComponent<Resourcecomponent>();
-			resource ->Hit();
+			
 			switch (resource->getResource()) {
 				case (GameEngine::eTexture::BRONZE) : 
 				{
@@ -65,7 +67,14 @@ void PlayerEntity::Attack() {
 					rock += 1;
 					break;
 				}
+				case GameEngine::eTexture::WALL:
+				{
+					std::cout << "break wall" << std::endl;
+					break;
+				}
 			}
+			resource->Hit();
+			break;
 			
 		}
 	}

@@ -4,6 +4,7 @@
 #include <SFML/System/Vector2.hpp>
 #include <vector>
 #include "Game/GameEntities/ResourceManagerEntity.h"
+#include "Game/GameEntities/BuildingSpawnerEntity.h"
 #include "Game/GameEntities/MapEntity.h"
 
 namespace Game
@@ -30,6 +31,7 @@ namespace Game
 		PlayerEntity* player;
 		MapEntity* map;
 		ResourceManagerEntity* resourceManager;
+		BuildingSpawnerEntity* buildingSpawner;
 
 		
 	};

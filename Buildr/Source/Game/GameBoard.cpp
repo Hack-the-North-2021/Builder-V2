@@ -26,6 +26,9 @@ GameBoard::GameBoard()
     //player->SetSize(sf::Vector2f(200.f, 200.f));
 
 	resourceManager = new ResourceManagerEntity();
+	buildingSpawner = BuildingSpawnerEntity::GetInstance();
+	GameEngine::GameEngineMain::GetInstance()->AddEntity(resourceManager);
+	GameEngine::GameEngineMain::GetInstance()->AddEntity(buildingSpawner);
 
 	map = new MapEntity();
 
