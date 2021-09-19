@@ -21,6 +21,10 @@ namespace Game
 		GameEngine::SpriteRenderComponent* m_renderComponent;
 		PlayerMovementComponent* playerMovementComponent;
 	private:
+		int food;
+		int rock;
+		int tree;
+		int bronze;
 		static PlayerEntity* sm_instance;
 		PlayerEntity();
 	};

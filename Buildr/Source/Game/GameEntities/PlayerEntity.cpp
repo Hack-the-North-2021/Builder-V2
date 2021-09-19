@@ -10,7 +10,8 @@
 
 using namespace Game;
 PlayerEntity* PlayerEntity::sm_instance = nullptr;
-PlayerEntity::PlayerEntity()
+
+PlayerEntity::PlayerEntity():tree(0),rock(0),food(0),bronze(0)
 {
 	//Render 
 	m_renderComponent = AddComponent<GameEngine::SpriteRenderComponent>();
@@ -32,7 +33,6 @@ PlayerEntity::PlayerEntity()
 }
 void PlayerEntity::Attack() {
 	std::vector<GameEngine::Entity*> resources = GameEngine::GameEngineMain::GetInstance()->GetEntitiesByTag("Resource");
-	std::cout << resources.size() << std::endl;
 	for (GameEngine::Entity* e : resources) {
 		if (e->GetEntityTag() == "MAP") {
 			continue;
@@ -42,7 +42,31 @@ void PlayerEntity::Attack() {
 		float dist = sqrt(pow(e->GetPos().x - GetPos().x, 2) +
 			pow(e->GetPos().y - GetPos().y, 2));
 		if (dist < 100) {
-			e->GetComponent<Resourcecomponent>()->Hit();
+			Resourcecomponent* resource = e->GetComponent<Resourcecomponent>();
+			resource ->Hit();
+			switch (resource->getResource()) {
+				case (GameEngine::eTexture::BRONZE) : 
+				{
+						bronze += 1;
+						break;
+				}
+				case (GameEngine::eTexture::FOOD) : 
+				{
+					food += 1;
+					break;
+				}
+				case (GameEngine::eTexture::TREE): 
+				{
+					tree += 1;
+					break;
+				}
+				case GameEngine::eTexture::ROCK :
+				{
+					rock += 1;
+					break;
+				}
+			}
+			
 		}
 	}
 

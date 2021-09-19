@@ -16,6 +16,7 @@ namespace Game
 	public:
 		ResourceManagerEntity();
 		~ResourceManagerEntity();
+		virtual void Update() override;
 
 		virtual void OnAddToWorld() override;
 		virtual void OnRemoveFromWorld() override;
@@ -24,6 +25,7 @@ namespace Game
 		vector<ResourceEntity*> resourceEntities;
 		const vector<GameEngine::eTexture::type> types = { GameEngine::eTexture::FOOD, GameEngine::eTexture::ROCK, GameEngine::eTexture::TREE, GameEngine::eTexture::BRONZE };
 		const int numResources = 1000;
+		void GenerateResource();
 	};
 }
 
