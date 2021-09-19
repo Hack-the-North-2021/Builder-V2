@@ -6,6 +6,7 @@
 #include "Game/GameEntities/ResourceManagerEntity.h"
 #include "Game/GameEntities/BuildingSpawnerEntity.h"
 #include "Game/GameEntities/MapEntity.h"
+#include "GameNetwork/NetworkClient.h"
 
 namespace Game
 {
@@ -15,6 +16,7 @@ namespace Game
 	class GameBoard
 	{
 	public:
+		NetworkClient client;
 		GameBoard();
 		virtual ~GameBoard();
 
