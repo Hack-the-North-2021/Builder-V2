@@ -1,5 +1,5 @@
 #pragma once
-#include"GameEngine/GameEngineMain.h"
+//#include"GameEngine/GameEngineMain.h"
 #include "Game/GameEntities/NetworkEntity.h"
 #include "Game/GameEntities/Resource.h"
 #include "Game/GameEntities/Player.h"

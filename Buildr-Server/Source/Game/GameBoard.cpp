@@ -5,7 +5,7 @@ using namespace Game;
 
 GameBoard::GameBoard()
 {
-	//NetworkManager::getInstance();
+	NetworkManager::getInstance();
 }
 
 
