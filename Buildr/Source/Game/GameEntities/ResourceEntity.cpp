@@ -17,11 +17,11 @@ ResourceEntity::ResourceEntity(int x, int y, GameEngine::eTexture::type resource
 	m_renderComponent->SetZLevel(2);
 	AddComponent<GameEngine::CollidableComponent>();
 
-	/*
-	m_resourceComponent = AddComponent<ResourceComponent>();
+	
+	m_resourceComponent = AddComponent<Resourcecomponent>();
 	m_resourceComponent->setHealth(health);
 	m_resourceComponent->setResource(resourceType);
-	*/
+	
 	GameEngine::GameEngineMain::GetInstance()->AddEntity(this);
 }
 

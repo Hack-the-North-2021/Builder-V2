@@ -42,7 +42,7 @@ void PlayerEntity::Attack() {
 		float dist = sqrt(pow(e->GetPos().x - GetPos().x, 2) +
 			pow(e->GetPos().y - GetPos().y, 2));
 		if (dist < 100) {
-			GetComponent<Resourcecomponent*>().Hit();
+			e->GetComponent<Resourcecomponent>()->Hit();
 		}
 	}
 
