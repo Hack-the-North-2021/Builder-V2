@@ -2,11 +2,13 @@
 
 NetworkManager* NetworkManager::networkSingleton = nullptr;
 
-NetworkManager::NetworkManager() {
+NetworkManager::NetworkManager() 
+	:server(8080, std::map<int, NetworkCallback>())
+{
 	// Create initial resources
 	
 	// initialize daniel's code here to start listening
-
+	server.OpenConnection();
 }
 
 void NetworkManager::handleMove(int conn_id, int temp) {

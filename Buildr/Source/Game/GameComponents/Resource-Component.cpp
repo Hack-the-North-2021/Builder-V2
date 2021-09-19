@@ -26,7 +26,6 @@ GameEngine::eTexture::type Resourcecomponent::getResource() {
 
 void Resourcecomponent::setHealth(int h) {
 	health = h;
-	std::cout << health << std::endl;
 	
 }
 

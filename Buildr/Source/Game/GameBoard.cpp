@@ -8,17 +8,16 @@
 #include "GameEngine/Util/CameraManager.h"
 #include "Game/GameEntities/PlayerEntity.h"
 
-
 using namespace Game;
-
-
-
-
 
 GameBoard::GameBoard()
 	: player(nullptr)
 	, map(nullptr)
+	, client("127.0.0.1", 8080, std::map<int, NetworkCallback>())
 {
+
+	client.OpenConnection();
+
 	player = PlayerEntity::GetInstance();
 
 	GameEngine::GameEngineMain::GetInstance()->AddEntity(player);
