@@ -47,22 +47,22 @@ void ResourceUIEntity::SETTEXT()
 		case (GameEngine::eTexture::BRONZE) : 
 		{
 				//ans = player->bronze;
-			ans = std::to_string(player->bronze)+ " bronze";
+			ans = "Bronze: " + std::to_string(player->bronze);
 				break;
 		}
 		case (GameEngine::eTexture::FOOD) : 
 		{
-			ans = std::to_string(player->food)+ " food";
+			ans = "Food: " + std::to_string(player->food);
 			break;
 		}
 		case (GameEngine::eTexture::TREE): 
 		{
-			ans = std::to_string(player->tree)+ " tree";
+			ans = "Tree: " + std::to_string(player->tree);
 			break;
 		}
 		case GameEngine::eTexture::ROCK :
 		{
-			ans = std::to_string(player->rock)+ " rock";
+			ans = "Rock: " + std::to_string(player->rock);
 			break;
 		}
 	}

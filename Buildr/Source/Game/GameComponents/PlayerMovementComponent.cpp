@@ -55,20 +55,20 @@ void PlayerMovementComponent::Update()
 
 	sf::Vector2f wantedVel = sf::Vector2f(0.f, 0.f);
 
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
 	{
 		wantedVel.x -= dt;
 	}
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
 	{
 		wantedVel.x += dt;
 	}
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
 	{
 		wantedVel.y -= dt;
 
 	}
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
 	{
 		wantedVel.y += dt;
 

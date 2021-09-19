@@ -8,6 +8,7 @@
 #include "SFML/Window/Keyboard.hpp"
 #include <Game/GameEntities/BuildingEntity.h>
 #include <GameEngine/Util/CameraManager.h>
+#include <Game/GameEntities/PlayerEntity.h>
 
 using namespace Game;
 bool building = false;
@@ -42,7 +43,28 @@ void Game::BuildingSpawnerEntity::Build(int x)
 
 {
 	std::cout << "build" << std::endl;
+	PlayerEntity* player = PlayerEntity::GetInstance();
+	if (!building) return;
 	building = false;
+	if (x == 1) {
+		player->food -= 5;
+	}
+	else if (x == 2) {
+		player->food -= 15;
+		player->tree -= 20;
+	}
+	else if (x == 3) {
+		player->tree -= 30;
+		player->rock -= 55;
+	}
+	else if (x == 4) {
+		player->food -= 20;
+		player->tree -= 30;
+		player->rock -= 40;
+		player->bronze -= 50;
+	}
+
+
 	currentBuilding->AddComponent<GameEngine::CollidableComponent>();
 	currentBuilding = nullptr;
 }
@@ -51,21 +73,32 @@ void Game::BuildingSpawnerEntity::Build(int x)
 
 void BuildingSpawnerEntity::Update() {
 	Entity::Update();
+	PlayerEntity* player = PlayerEntity::GetInstance();
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num1)&&!building) {
-		currentBuilding = new ResourceEntity(0, 0, types[0], 100);
-		building = true;
+		if (player->food >= 5) {
+			currentBuilding = new ResourceEntity(0, 0, types[0], 100);
+			building = true;
+		}
+
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num2)&&!building) {
-		currentBuilding = new ResourceEntity(0, 0, types[1], 100);
-		building = true;
+		if (player->food >= 15 && player->tree >= 20) {
+			currentBuilding = new ResourceEntity(0, 0, types[1], 100);
+			building = true;
+		}
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num3)&&!building) {
-		currentBuilding = new ResourceEntity(0, 0, types[2], 100);
-		building = true;
+		if (player->tree >= 30 && player->rock >= 55) {
+			currentBuilding = new ResourceEntity(0, 0, types[2], 100);
+			building = true;
+
+		}
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num4)&&!building) {
-		currentBuilding = new ResourceEntity(0, 0, types[3], 100);
-		building = true;
+		if (player->food >= 20 && player->tree >= 30 && player->rock >= 40 && player->bronze > 50) {
+			currentBuilding = new ResourceEntity(0, 0, types[3], 100);
+			building = true;
+		}
 	}
 	
 	else if (building) {
