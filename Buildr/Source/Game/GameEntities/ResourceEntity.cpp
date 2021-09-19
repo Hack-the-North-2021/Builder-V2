@@ -4,7 +4,7 @@
 #include "GameEngine/EntitySystem/Components/CollidableComponent.h"
 using namespace Game;
 
-ResourceEntity::ResourceEntity(int x, int y, GameEngine::eTexture::type resourceType)
+ResourceEntity::ResourceEntity(int x, int y, GameEngine::eTexture::type resourceType, int health)
 	: x(x)
 	, y(y)
 	, resourceType(resourceType)
@@ -16,6 +16,12 @@ ResourceEntity::ResourceEntity(int x, int y, GameEngine::eTexture::type resource
 	SetSize(sf::Vector2f(50, 50));
 	m_renderComponent->SetZLevel(2);
 	AddComponent<GameEngine::CollidableComponent>();
+
+	/*
+	m_resourceComponent = AddComponent<ResourceComponent>();
+	m_resourceComponent->setHealth(health);
+	m_resourceComponent->setResource(resourceType);
+	*/
 	GameEngine::GameEngineMain::GetInstance()->AddEntity(this);
 }
 
@@ -40,6 +46,4 @@ void ResourceEntity::OnRemoveFromWorld()
 
 	Entity::OnRemoveFromWorld();
 }
-
-
 

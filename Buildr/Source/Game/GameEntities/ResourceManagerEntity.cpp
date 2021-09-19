@@ -10,7 +10,7 @@ ResourceManagerEntity::ResourceManagerEntity()
 		int x = RandGen::randint(0, 12000);
 		int y = RandGen::randint(0, 8000);
 		int type = RandGen::randint(0, 3);
-		ResourceEntity* currentResource = new ResourceEntity(x, y, types[type]);
+		ResourceEntity* currentResource = new ResourceEntity(x, y, types[type], 100);
 		resourceEntities.push_back(currentResource);
 
 
