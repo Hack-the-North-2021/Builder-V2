@@ -7,7 +7,7 @@ typedef struct resourceData {
 	float x;
 	float y;
 	int type;
-} playerData;
+} resourceData;
 
 class Resource : public NetworkEntity
 {

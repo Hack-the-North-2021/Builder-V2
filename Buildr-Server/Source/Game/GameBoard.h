@@ -1,6 +1,6 @@
 #pragma once
 #include "GameEngine/EntitySystem/Entity.h"
-#include "GameNetwork/NetworkManager.h"
+//#include "GameNetwork/NetworkManager.h"
 #include <SFML/System/Vector2.hpp>
 #include <vector>
 
@@ -16,6 +16,8 @@ namespace Game
 		virtual ~GameBoard();
 
 		void Update();
+
+		bool IsGameOver() { return false; }
 		
 	};
 }

@@ -9,6 +9,7 @@ typedef struct playerData {
 	float y;
 } playerData;
 
+
 enum resourceIndex
 {
 	Forest = 0,

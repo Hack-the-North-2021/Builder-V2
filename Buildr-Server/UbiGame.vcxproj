@@ -192,6 +192,7 @@ XCOPY "$(SolutionDir)..\SFML-2.5.0\bin" "$(TargetDir)" /S /Y /I</Command>
     <ClCompile Include="Source\Game\GameEntities\Resource.cpp" />
     <ClCompile Include="Source\Game\GameNetwork\NetworkClient.cpp" />
     <ClCompile Include="Source\Game\GameNetwork\NetworkManager.cpp" />
+    <ClCompile Include="Source\Game\GameNetwork\NetworkServer.cpp" />
     <ClCompile Include="Source\Game\GameUtils\Logger.cpp" />
     <ClCompile Include="Source\main.cpp" />
     <ClCompile Include="Source\GameEngine\EntitySystem\Entity.cpp" />
@@ -229,6 +230,7 @@ XCOPY "$(SolutionDir)..\SFML-2.5.0\bin" "$(TargetDir)" /S /Y /I</Command>
     <ClInclude Include="Source\Game\GameEntities\Resource.h" />
     <ClInclude Include="Source\Game\GameNetwork\NetworkClient.h" />
     <ClInclude Include="Source\Game\GameNetwork\NetworkManager.h" />
+    <ClInclude Include="Source\Game\GameNetwork\NetworkServer.h" />
     <ClInclude Include="Source\Game\GameUtils\Logger.h" />
   </ItemGroup>
   <ItemGroup>
