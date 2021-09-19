@@ -16,7 +16,7 @@
 typedef struct sockaddr Sockaddr;
 typedef struct sockaddr_in SockaddrIn;
 
-typedef void (*NetworkCallback)(const nlohmann::json& json_cmd);
+typedef void (*NetworkCallback)(int client_id, const nlohmann::json& json_cmd);
 
 class NetworkServer
 {
@@ -33,7 +33,7 @@ public:
  private:
     void Listen();
     void HandleConnection(int client_sock);
-    void DispatchCmd(const std::string& json_string);
+    void DispatchCmd(int client_sock, const std::string& json_string);
     void SendRawMessage(int client_sock, const nlohmann::json& data);
 };
 

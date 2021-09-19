@@ -11,23 +11,13 @@ NetworkManager::NetworkManager()
 	server.OpenConnection();
 }
 
-void NetworkManager::handleMove(int conn_id, int temp) {
-	if (playerIds.count(conn_id) == 1) {
-		Player* plr = playerIds.at(conn_id);
-
-		plr->SetPos(sf::Vector2f()); // set based on json
-		plr->broadcastState();
-	}
+void
+NetworkManager::handlePlayerMove(int client_id, const nlohmann::json& json_cmd)
+{
+    
 }
 
-void NetworkManager::handleMine(int conn_id, int temp) {
-	if (playerIds.count(conn_id) == 1) {
-		Player* plr = playerIds.at(conn_id);
-
-		if (resourceIds.count(0) == 1) { // check based on json
-			Resource* res = resourceIds.at(0);
-			plr->mine(res);
-		}
-	}
-
+void
+NetworkManager::sendPlayerMove(std::vector<PlayerTransform>)
+{
 }

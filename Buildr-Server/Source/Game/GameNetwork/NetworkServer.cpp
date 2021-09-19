@@ -73,12 +73,12 @@ NetworkServer::HandleConnection(int client_sock)
             continue;
 
         Logger::Debug(std::string(recv_msg));
-        DispatchCmd(recv_msg);
+        DispatchCmd(client_sock, recv_msg);
     }
 }
 
 void
-NetworkServer::DispatchCmd(const std::string& json_string)
+NetworkServer::DispatchCmd(int client_sock, const std::string& json_string)
 {
     try {
         nlohmann::json data = nlohmann::json::parse(json_string);
@@ -87,7 +87,7 @@ NetworkServer::DispatchCmd(const std::string& json_string)
         for (const auto &[nc_cmd, nc_callback] : network_callbacks) {
             if (cmd != nc_cmd) continue;
             
-            nc_callback(cmd);
+            nc_callback(client_sock, cmd);
         }
 
     } catch (nlohmann::json::parse_error& e) {
