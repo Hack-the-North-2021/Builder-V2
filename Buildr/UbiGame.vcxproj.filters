@@ -111,6 +111,13 @@
     <ClCompile Include="Source\Game\GameUtils\Logger.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Game\GameEntities\ResourceUIEntity.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Game\GameEntities\UI\TransparentRectangle.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Game\GameEntities\Shapes\RectangleEntity.cpp">
     <ClCompile Include="Source\Game\GameEntities\BuildingEntity.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -209,6 +216,13 @@
     <ClInclude Include="Source\Game\GameUtils\Logger.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Game\GameEntities\ResourceUIEntity.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Game\GameEntities\UI\TransparentRectangle.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Game\GameEntities\Shapes\RectangleEntity.h">
     <ClInclude Include="Source\Game\GameEntities\BuildingEntity.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -218,6 +232,9 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="Resources\img\player.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\img\shapes\rectangle.png">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

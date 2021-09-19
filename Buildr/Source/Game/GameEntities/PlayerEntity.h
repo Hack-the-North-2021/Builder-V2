@@ -16,16 +16,16 @@ namespace Game
 		virtual void OnAddToWorld() override;
 		virtual void OnRemoveFromWorld() override;
 		void Attack();
-
-	protected:
-		GameEngine::SpriteRenderComponent* m_renderComponent;
-		PlayerMovementComponent* playerMovementComponent;
-	private:
 		int food;
 		int rock;
 		int tree;
 		int bronze;
-		static PlayerEntity* sm_instance;
+	
+	protected:
+		GameEngine::SpriteRenderComponent* m_renderComponent;
+		PlayerMovementComponent* playerMovementComponent;
+	private:
+	static PlayerEntity* sm_instance;
 		PlayerEntity();
 	};
 	

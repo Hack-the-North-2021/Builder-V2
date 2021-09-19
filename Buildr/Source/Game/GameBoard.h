@@ -33,6 +33,7 @@ namespace Game
 		PlayerEntity* player;
 		MapEntity* map;
 		ResourceManagerEntity* resourceManager;
+		GameEngine::Entity* UI;
 		BuildingSpawnerEntity* buildingSpawner;
 
 		
