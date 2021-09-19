@@ -118,6 +118,10 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Source\Game\GameEntities\Shapes\RectangleEntity.cpp">
+    <ClCompile Include="Source\Game\GameEntities\BuildingEntity.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Game\GameEntities\BuildingSpawnerEntity.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -219,6 +223,10 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Source\Game\GameEntities\Shapes\RectangleEntity.h">
+    <ClInclude Include="Source\Game\GameEntities\BuildingEntity.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Game\GameEntities\BuildingSpawnerEntity.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

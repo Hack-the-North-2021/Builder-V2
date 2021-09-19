@@ -9,6 +9,7 @@
 #include "Util/AnimationManager.h"
 #include "Util/ButtonManager.h"
 #include "Game/GameEntities/PlayerEntity.h"
+#include "Game/GameEntities/BuildingSpawnerEntity.h"
 #include "Util/CameraManager.h"
 
 
@@ -23,6 +24,9 @@ sf::Clock		GameEngineMain::sm_gameClock;
 
 std::vector<Entity*> GameEngineMain::s_emptyEntityTagList;
 bool spaceDown = false;
+bool oneDown = false;
+bool twoDown = false;
+bool threeDown = false;
 GameEngineMain::GameEngineMain()
     : m_renderTarget(nullptr)
     , m_gameBoard(nullptr)
@@ -231,19 +235,44 @@ void GameEngineMain::UpdateWindowEvents()
         if (event.type == sf::Event::KeyPressed) {
             if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space)&&!spaceDown)
             {
-                
-
                 Game::PlayerEntity::GetInstance() ->Attack();
                 spaceDown = true;
             }
-            
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num1) && !oneDown)
+            {
+                
+                oneDown = true;
+            }
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num2) && !twoDown)
+            {
+                
+                twoDown= true;
+            }
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num3) && !threeDown)
+            {
+                
+                threeDown = true;
+            }
         }
         if (event.type == sf::Event::KeyReleased) {
           
             if (event.key.code == sf::Keyboard::Space) {
                 spaceDown = false;
             }
+            if (event.key.code == sf::Keyboard::Num1) {
+                Game::BuildingSpawnerEntity::GetInstance()->Build(1);
+                oneDown = false;
+            }
+            if (event.key.code == sf::Keyboard::Num2) {
+                Game::BuildingSpawnerEntity::GetInstance()->Build(2);
+                twoDown = false;
+            }
+            if (event.key.code == sf::Keyboard::Num3) {
+                Game::BuildingSpawnerEntity::GetInstance()->Build(3);
+                threeDown = false;
+            }
         }
+
     }
 }
 

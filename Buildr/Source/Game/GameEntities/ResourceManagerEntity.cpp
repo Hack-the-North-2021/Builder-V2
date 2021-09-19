@@ -53,7 +53,6 @@ void ResourceManagerEntity::Update(){
 		GenerateResource();
 	}
 
-
 }
 
 

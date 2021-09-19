@@ -12,14 +12,14 @@
 
 using namespace Game;
 
-
-
-
-
 GameBoard::GameBoard()
 	: player(nullptr)
 	, map(nullptr)
+	, client("127.0.0.1", 8080, std::map<int, NetworkCallback>())
 {
+
+	client.OpenConnection();
+
 	player = PlayerEntity::GetInstance();
 
 	GameEngine::GameEngineMain::GetInstance()->AddEntity(player);
@@ -45,6 +45,9 @@ GameBoard::GameBoard()
 	GameEngine::GameEngineMain::GetInstance()->AddEntity(UI);
 
 	resourceManager = new ResourceManagerEntity();
+	buildingSpawner = BuildingSpawnerEntity::GetInstance();
+	GameEngine::GameEngineMain::GetInstance()->AddEntity(resourceManager);
+	GameEngine::GameEngineMain::GetInstance()->AddEntity(buildingSpawner);
 
 	map = new MapEntity();
 
