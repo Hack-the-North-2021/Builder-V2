@@ -12,6 +12,7 @@ ResourceEntity::ResourceEntity(int x, int y, GameEngine::eTexture::type resource
 	m_renderComponent = AddComponent<GameEngine::SpriteRenderComponent>();
 	m_renderComponent->SetTexture(resourceType);
 	SetPos(sf::Vector2f(x, y));
+	SetSize(sf::Vector2f(50, 50));
 	m_renderComponent->SetZLevel(4);
 	GameEngine::GameEngineMain::GetInstance()->AddEntity(this);
 }
