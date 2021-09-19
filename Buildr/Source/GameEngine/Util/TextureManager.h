@@ -46,7 +46,7 @@ namespace GameEngine
 		case eTexture::GrassWall: return "/buildings/grasswall.png";
 		case eTexture::WoodWall: return "/buildings/woodwall.png";
 		case eTexture::RockWall: return "/buildings/rockwall.png";
-		case eTexture::BrickWall: return "/building/brickwall.png";
+		case eTexture::BrickWall: return "/buildings/brickwall.png";
 		default:       return "UnknownTexType";
 		}
 	}

@@ -16,7 +16,7 @@ namespace Game
 	class GameBoard
 	{
 	public:
-		NetworkClient client;
+		// NetworkClient client;
 		GameBoard();
 		virtual ~GameBoard();
 

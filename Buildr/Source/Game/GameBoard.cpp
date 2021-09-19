@@ -15,10 +15,10 @@ using namespace Game;
 GameBoard::GameBoard()
 	: player(nullptr)
 	, map(nullptr)
-	, client("127.0.0.1", 8080, std::map<int, NetworkCallback>())
+	// , client("127.0.0.1", 8080, std::map<int, NetworkCallback>())
 {
 
-	client.OpenConnection();
+	// client.OpenConnection();
 
 	player = PlayerEntity::GetInstance();
 

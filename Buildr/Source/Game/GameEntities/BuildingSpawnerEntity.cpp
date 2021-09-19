@@ -52,10 +52,22 @@ void Game::BuildingSpawnerEntity::Build(int x)
 void BuildingSpawnerEntity::Update() {
 	Entity::Update();
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num1)&&!building) {
-		int type = 4;
-		currentBuilding = new ResourceEntity(0, 0, types[type], 100);
+		currentBuilding = new ResourceEntity(0, 0, types[0], 100);
 		building = true;
 	}
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num2)&&!building) {
+		currentBuilding = new ResourceEntity(0, 0, types[1], 100);
+		building = true;
+	}
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num3)&&!building) {
+		currentBuilding = new ResourceEntity(0, 0, types[2], 100);
+		building = true;
+	}
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num4)&&!building) {
+		currentBuilding = new ResourceEntity(0, 0, types[3], 100);
+		building = true;
+	}
+	
 	else if (building) {
 		int mx = sf::Mouse::getPosition(*(GameEngine::GameEngineMain::GetInstance()->m_renderWindow)).x;
 		int my = sf::Mouse::getPosition(*(GameEngine::GameEngineMain::GetInstance()->m_renderWindow)).y;

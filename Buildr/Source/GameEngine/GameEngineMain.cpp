@@ -27,6 +27,7 @@ bool spaceDown = false;
 bool oneDown = false;
 bool twoDown = false;
 bool threeDown = false;
+bool fourDown = false;
 GameEngineMain::GameEngineMain()
     : m_renderTarget(nullptr)
     , m_gameBoard(nullptr)
@@ -253,6 +254,12 @@ void GameEngineMain::UpdateWindowEvents()
                 
                 threeDown = true;
             }
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num4) && !fourDown)
+            {
+                
+                fourDown = true;
+            }
+ 
         }
         if (event.type == sf::Event::KeyReleased) {
           
@@ -271,6 +278,11 @@ void GameEngineMain::UpdateWindowEvents()
                 Game::BuildingSpawnerEntity::GetInstance()->Build(3);
                 threeDown = false;
             }
+            if (event.key.code == sf::Keyboard::Num4) {
+                Game::BuildingSpawnerEntity::GetInstance()->Build(4);
+                fourDown = false;
+            }
+ 
         }
 
     }
