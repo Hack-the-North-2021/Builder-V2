@@ -50,18 +50,18 @@ void Game::BuildingSpawnerEntity::Build(int x)
 		player->food -= 5;
 	}
 	else if (x == 2) {
-		player->food -= 5;
-		player->tree -= 5;
+		player->food -= 15;
+		player->tree -= 20;
 	}
 	else if (x == 3) {
-		player->tree -= 5;
-		player->rock -= 5;
+		player->tree -= 30;
+		player->rock -= 55;
 	}
 	else if (x == 4) {
-		player->food -= 5;
-		player->tree -= 5;
-		player->rock -= 5;
-		player->bronze -= 5;
+		player->food -= 20;
+		player->tree -= 30;
+		player->rock -= 40;
+		player->bronze -= 50;
 	}
 
 
@@ -82,20 +82,20 @@ void BuildingSpawnerEntity::Update() {
 
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num2)&&!building) {
-		if (player->food >= 5 && player->tree >= 5) {
+		if (player->food >= 15 && player->tree >= 20) {
 			currentBuilding = new ResourceEntity(0, 0, types[1], 100);
 			building = true;
 		}
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num3)&&!building) {
-		if (player->tree >= 5 && player->rock >= 5) {
+		if (player->tree >= 30 && player->rock >= 55) {
 			currentBuilding = new ResourceEntity(0, 0, types[2], 100);
 			building = true;
 
 		}
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Num4)&&!building) {
-		if (player->food >= 5 && player->tree >= 5 && player->rock >= 5 && player->bronze > 5) {
+		if (player->food >= 20 && player->tree >= 30 && player->rock >= 40 && player->bronze > 50) {
 			currentBuilding = new ResourceEntity(0, 0, types[3], 100);
 			building = true;
 		}
