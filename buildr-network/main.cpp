@@ -3,5 +3,5 @@
 int
 main()
 {
-
+	NetworkManager::getInstance();
 }
