@@ -10,15 +10,20 @@ namespace Game
 	class PlayerEntity : public GameEngine::Entity
 	{
 	public:
-		PlayerEntity();
+		static PlayerEntity* GetInstance() { if (!sm_instance) sm_instance = new PlayerEntity(); return sm_instance; }
 		~PlayerEntity();
 
 		virtual void OnAddToWorld() override;
 		virtual void OnRemoveFromWorld() override;
+		void Attack();
 
 	protected:
 		GameEngine::SpriteRenderComponent* m_renderComponent;
 		PlayerMovementComponent* playerMovementComponent;
+	private:
+		static PlayerEntity* sm_instance;
+		PlayerEntity();
 	};
+	
 }
 

@@ -5,6 +5,7 @@
 
 #include <vector>
 #include <iostream>
+#include "SFML/Window/Mouse.hpp"
 using std::cout;
 using std::endl;
 
@@ -51,6 +52,7 @@ void CollidablePhysicsComponent::Update()
 		// cout << colideBox.height << " " << colideBox.width << endl;
 		if (myBox.intersects(colideBox, intersection))
 		{
+			
 			sf::Vector2f pos = GetEntity()->GetPos();
 			if (intersection.width < intersection.height)
 			{

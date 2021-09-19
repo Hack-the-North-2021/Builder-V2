@@ -13,6 +13,7 @@ namespace Game
 		PlayerMovementComponent();
 		~PlayerMovementComponent();
         void SetVelocity(float vel);
+		
 
 		virtual void Update() override;
 		virtual void OnAddToWorld() override;

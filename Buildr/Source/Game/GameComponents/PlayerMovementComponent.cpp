@@ -5,10 +5,11 @@
 
 #include "GameEngine/Util/TextureManager.h"
 #include "GameEngine/Util/AnimationManager.h"
-
+#include "GameEngine/EntitySystem/Entity.h"
 #include <SFML/Window/Keyboard.hpp>
 #include <cmath>
 #include <iostream>
+#include <vector>
 
 using namespace Game;
 
@@ -43,9 +44,11 @@ void PlayerMovementComponent::OnAddToWorld()
 
 
 
+
 void PlayerMovementComponent::Update()
 {
 	Component::Update();
+	
 
 	float dt = GameEngine::GameEngineMain::GetTimeDelta();
 

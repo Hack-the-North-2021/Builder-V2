@@ -17,6 +17,7 @@ namespace Game
 		virtual void OnRemoveFromWorld() override;
 		int x;
 		int y;
+		void Hit();
 		GameEngine::eTexture::type resourceType;
 
 	protected:

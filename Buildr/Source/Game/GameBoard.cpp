@@ -19,7 +19,8 @@ GameBoard::GameBoard()
 	: player(nullptr)
 	, map(nullptr)
 {
-    player = new PlayerEntity();
+	player = PlayerEntity::GetInstance();
+
 	GameEngine::GameEngineMain::GetInstance()->AddEntity(player);
 	player->SetPos(sf::Vector2f(200.f, 200.f));
     //player->SetSize(sf::Vector2f(200.f, 200.f));
