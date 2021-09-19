@@ -191,6 +191,7 @@ XCOPY "$(SolutionDir)..\SFML-2.5.0\bin" "$(TargetDir)" /S /Y /I</Command>
     <ClCompile Include="Source\Game\GameEntities\ResourceEntity.cpp" />
     <ClCompile Include="Source\Game\GameEntities\ResourceManagerEntity.cpp" />
     <ClCompile Include="Source\Game\GameEntities\ResourceUIEntity.cpp" />
+    <ClCompile Include="Source\Game\GameEntities\Shapes\RectangleEntity.cpp" />
     <ClCompile Include="Source\Game\GameNetwork\NetworkClient.cpp" />
     <ClCompile Include="Source\Game\GameUtils\Logger.cpp" />
     <ClCompile Include="Source\main.cpp" />
@@ -230,12 +231,14 @@ XCOPY "$(SolutionDir)..\SFML-2.5.0\bin" "$(TargetDir)" /S /Y /I</Command>
     <ClInclude Include="Source\Game\GameEntities\ResourceEntity.h" />
     <ClInclude Include="Source\Game\GameEntities\ResourceManagerEntity.h" />
     <ClInclude Include="Source\Game\GameEntities\ResourceUIEntity.h" />
+    <ClInclude Include="Source\Game\GameEntities\Shapes\RectangleEntity.h" />
     <ClInclude Include="Source\Game\GameNetwork\NetworkClient.h" />
     <ClInclude Include="Source\Game\GameUtils\Logger.h" />
     <ClInclude Include="Source\Game\GameEntities\UI\TransparentRectangle.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Resources\img\player.png" />
+    <Image Include="Resources\img\shapes\rectangle.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

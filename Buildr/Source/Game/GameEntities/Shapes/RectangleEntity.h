@@ -5,11 +5,11 @@
 namespace Game
 {
 
-	class TransparentRectangle : public GameEngine::Entity
+	class RectangleEntity : public GameEngine::Entity
 	{
 	public:
-		TransparentRectangle();
-		~TransparentRectangle();
+		RectangleEntity();
+		~RectangleEntity();
 
 		virtual void OnAddToWorld() override;
 		virtual void OnRemoveFromWorld() override;

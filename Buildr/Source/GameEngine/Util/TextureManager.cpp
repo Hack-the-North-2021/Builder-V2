@@ -57,6 +57,7 @@ namespace TextureHelper
         case  GameEngine::eTexture::ROCK:	     return sf::Vector2f(50.f, 50.f);
         case  GameEngine::eTexture::TREE:	     return sf::Vector2f(50.f, 50.f);
         case  GameEngine::eTexture::BRONZE:	     return sf::Vector2f(50.f, 50.f);
+        case  GameEngine::eTexture::Rectangle:	     return sf::Vector2f(200.f, 600.f);
         default:							 return sf::Vector2f(-1.f, -1.f);
         }
     }

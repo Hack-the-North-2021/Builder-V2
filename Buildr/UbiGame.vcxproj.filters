@@ -117,6 +117,9 @@
     <ClCompile Include="Source\Game\GameEntities\UI\TransparentRectangle.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Game\GameEntities\Shapes\RectangleEntity.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\GameEngine\GameEngineMain.h">
@@ -215,9 +218,15 @@
     <ClInclude Include="Source\Game\GameEntities\UI\TransparentRectangle.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Game\GameEntities\Shapes\RectangleEntity.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="Resources\img\player.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\img\shapes\rectangle.png">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

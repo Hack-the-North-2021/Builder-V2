@@ -8,6 +8,7 @@
 #include "GameEngine/Util/CameraManager.h"
 #include "Game/GameEntities/PlayerEntity.h"
 #include "Game/GameEntities/ResourceUIEntity.h"
+#include "Game/GameEntities/UI/TransparentRectangle.h"
 
 using namespace Game;
 
@@ -37,8 +38,9 @@ GameBoard::GameBoard()
 	point = new ResourceUIEntity(GameEngine::eTexture::TREE, 300.f);
 	point->SetParent(UI);
 	point->SetLocalPosOffset(sf::Vector2f(300.f, 300.f));
-
-
+	point = new TransparentRectangle();
+	point->SetParent(UI);
+	point->SetLocalPosOffset(sf::Vector2f(350.f, 250.f));
 
 	GameEngine::GameEngineMain::GetInstance()->AddEntity(UI);
 

@@ -19,6 +19,7 @@ namespace GameEngine
 			ROCK,
 			TREE,
 			BRONZE,
+			Rectangle,
 			Count,
 		};
 	}	
@@ -35,6 +36,7 @@ namespace GameEngine
 		case eTexture::ROCK:	  return "/resource/rock.png";
 		case eTexture::TREE:	  return "/resource/tree.png";
 		case eTexture::BRONZE:	  return "/resource/bronze.png";
+		case eTexture::Rectangle: return "/shapes/rectangle.png";
 		default:       return "UnknownTexType";
 		}
 	}
