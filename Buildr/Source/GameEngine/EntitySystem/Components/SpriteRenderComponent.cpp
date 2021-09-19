@@ -4,7 +4,12 @@
 #include "GameEngine/Util/CameraManager.h"
 #include <iostream>
 using namespace GameEngine;
+bool rectOverlap(float x1, float y1, float w1, float h1, float x2, float y2, float w2, float h2) {
+	return (((x2 + w2 / 2 >= x1 - w1 / 2) && (x2 - w2 / 2 <= x1 + w1 / 2)) &&
+		((y2 + h2 / 2 >= y1 - h1 / 2) && (y2 - h2 / 2 <= y1 + h1 / 2)));
 
+
+}
 SpriteRenderComponent::SpriteRenderComponent()	
 	: m_texture(eTexture::None)
 	, m_tileIndex(sf::Vector2i(0, 0))
@@ -104,13 +109,20 @@ void SpriteRenderComponent::Render(sf::RenderTarget* target)
 	sf::Vector2f camPos = GameEngine::CameraManager::GetInstance()->GetCameraView().getCenter();
 	sf::Vector2f spritePos = GetEntity()->GetPos();
 
-	if (GetEntity()->GetEntityTag() != "MAP" && GetEntity()->GetEntityTag() != "Player") {
+	/*if (GetEntity()->GetEntityTag() != "MAP" && GetEntity()->GetEntityTag() != "Player") {
 		if (camPos.x - 600 <= spritePos.x && spritePos.x <= camPos.x + 600 && camPos.y - 400 <= spritePos.y && spritePos.y <= camPos.y + 400) {
 
 		}
 		else {
 			return;
 		}
+	}*/
+	
+	sf::Vector2f spriteSize = GetEntity()->GetSize();
+	//std::cout << spriteSize.x << " " << spriteSize.y << std::endl;
+	if (!rectOverlap(camPos.x,camPos.y,1200,800,spritePos.x,spritePos.y,spriteSize.x,spriteSize.y)&& GetEntity()->GetEntityTag() != "MAP") {
+		return;
+
 	}
 
 	
