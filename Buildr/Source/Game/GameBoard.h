@@ -4,7 +4,9 @@
 #include <SFML/System/Vector2.hpp>
 #include <vector>
 #include "Game/GameEntities/ResourceManagerEntity.h"
+#include "Game/GameEntities/BuildingSpawnerEntity.h"
 #include "Game/GameEntities/MapEntity.h"
+#include "GameNetwork/NetworkClient.h"
 
 namespace Game
 {
@@ -14,6 +16,7 @@ namespace Game
 	class GameBoard
 	{
 	public:
+		NetworkClient client;
 		GameBoard();
 		virtual ~GameBoard();
 
@@ -30,6 +33,8 @@ namespace Game
 		PlayerEntity* player;
 		MapEntity* map;
 		ResourceManagerEntity* resourceManager;
+		GameEngine::Entity* UI;
+		BuildingSpawnerEntity* buildingSpawner;
 
 		
 	};
