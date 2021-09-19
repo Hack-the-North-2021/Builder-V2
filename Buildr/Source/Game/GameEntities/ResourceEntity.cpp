@@ -13,7 +13,7 @@ ResourceEntity::ResourceEntity(int x, int y, GameEngine::eTexture::type resource
 	m_renderComponent = AddComponent<GameEngine::SpriteRenderComponent>();
 	m_renderComponent->SetTexture(resourceType);
 	SetPos(sf::Vector2f(x, y));
-	SetSize(sf::Vector2f(50, 50));
+	SetSize(sf::Vector2f(100, 100));
 	m_renderComponent->SetZLevel(2);
 	AddComponent<GameEngine::CollidableComponent>();
 

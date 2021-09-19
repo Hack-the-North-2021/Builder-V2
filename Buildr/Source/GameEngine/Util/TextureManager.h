@@ -20,6 +20,10 @@ namespace GameEngine
 			TREE,
 			BRONZE,
 			Rectangle,
+			GrassWall,
+			WoodWall,
+			RockWall,
+			BrickWall,
 			Count,
 		};
 	}	
@@ -37,6 +41,10 @@ namespace GameEngine
 		case eTexture::TREE:	  return "/resource/tree.png";
 		case eTexture::BRONZE:	  return "/resource/bronze.png";
 		case eTexture::Rectangle: return "/shapes/rectangle.png";
+		case eTexture::GrassWall: return "/buildings/grasswall.png";
+		case eTexture::WoodWall: return "/buildings/woodwall.png";
+		case eTexture::RockWall: return "/buildings/rockwall.png";
+		case eTexture::BrickWall: return "/building/brickwall.png";
 		default:       return "UnknownTexType";
 		}
 	}
