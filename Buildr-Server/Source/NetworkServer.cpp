@@ -1,7 +1,7 @@
 #include <cstring>
 
 #include "NetworkServer.h"
-#include "Game/GameUtils/Logger.h"
+#include "Logger.h"
 
 #define MAX_PACKET 1024
 #define BACKLOG_SIZE 10

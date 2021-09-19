@@ -30,11 +30,11 @@ public:
     NetworkServer(int port, std::map<int,NetworkCallback> network_callbacks);
     ~NetworkServer();
     void OpenConnection();
+    void SendRawMessage(int client_sock, const nlohmann::json& data);
  private:
     void Listen();
     void HandleConnection(int client_sock);
     void DispatchCmd(int client_sock, const std::string& json_string);
-    void SendRawMessage(int client_sock, const nlohmann::json& data);
 };
 
 #endif // __NETWORKSERVER_H__
