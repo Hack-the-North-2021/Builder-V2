@@ -23,7 +23,7 @@ namespace Game
 
 	protected:
 		vector<ResourceEntity*> resourceEntities;
-		const vector<GameEngine::eTexture::type> types = { GameEngine::eTexture::FOOD, GameEngine::eTexture::ROCK, GameEngine::eTexture::TREE, GameEngine::eTexture::BRONZE ,GameEngine::eTexture::WALL};
+		const vector<GameEngine::eTexture::type> types = { GameEngine::eTexture::FOOD, GameEngine::eTexture::ROCK, GameEngine::eTexture::TREE, GameEngine::eTexture::BRONZE ,GameEngine::eTexture::GrassWall, GameEngine::eTexture::WoodWall, GameEngine::eTexture::RockWall, GameEngine::eTexture::BrickWall};
 		const int numResources = 1000;
 		void GenerateResource();
 	};

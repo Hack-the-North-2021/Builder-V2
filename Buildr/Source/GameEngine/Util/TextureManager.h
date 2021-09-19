@@ -20,6 +20,10 @@ namespace GameEngine
 			TREE,
 			BRONZE,
 			Rectangle,
+			GrassWall,
+			WoodWall,
+			RockWall,
+			BrickWall,
 			Count,
 
 		};
