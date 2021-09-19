@@ -4,10 +4,12 @@
 #include "Game/GameComponents/CameraFocusComponent.h"
 #include "Game/GameComponents/PlayerMovementComponent.h"
 #include "GameEngine/EntitySystem/Components/CollidablePhysicsComponent.h"
+#include <GameEngine/GameEngineMain.h>
+#include <iostream>
 
 
 using namespace Game;
-
+PlayerEntity* PlayerEntity::sm_instance = nullptr;
 PlayerEntity::PlayerEntity()
 {
 	//Render 
@@ -28,7 +30,23 @@ PlayerEntity::PlayerEntity()
 	//Camera control
 	AddComponent<CameraFocusComponent>();
 }
+void PlayerEntity::Attack() {
+	std::vector<GameEngine::Entity*> resources = GameEngine::GameEngineMain::GetInstance()->GetEntitiesByTag("Resource");
+	std::cout << resources.size() << std::endl;
+	for (GameEngine::Entity* e : resources) {
+		if (e->GetEntityTag() == "MAP") {
+			continue;
+		}
 
+
+		float dist = sqrt(pow(e->GetPos().x - GetPos().x, 2) +
+			pow(e->GetPos().y - GetPos().y, 2));
+		if (dist < 100) {
+			GetComponent<Resourcecomponent*>().Hit();
+		}
+	}
+
+}
 
 PlayerEntity::~PlayerEntity()
 {
