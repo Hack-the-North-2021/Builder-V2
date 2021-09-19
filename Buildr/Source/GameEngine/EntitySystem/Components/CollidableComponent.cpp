@@ -56,11 +56,11 @@ void CollidableComponent::SetBoundingBox(sf::Vector2f size)
 }
 
 const AABBRect CollidableComponent::GetWorldAABB() const
-{ 
+{
 	AABBRect box = m_AABBBox;
-	
+
 	box.left += GetEntity()->GetPos().x;
-	box.top  += GetEntity()->GetPos().y;	
+	box.top += GetEntity()->GetPos().y;
 
 	return box;
 }

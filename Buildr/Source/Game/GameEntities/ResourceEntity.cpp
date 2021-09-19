@@ -1,6 +1,7 @@
 #include "ResourceEntity.h"
 #include "GameEngine/GameEngineMain.h"
 #include <iostream>
+#include "GameEngine/EntitySystem/Components/CollidableComponent.h"
 using namespace Game;
 
 ResourceEntity::ResourceEntity(int x, int y, GameEngine::eTexture::type resourceType)
@@ -12,7 +13,9 @@ ResourceEntity::ResourceEntity(int x, int y, GameEngine::eTexture::type resource
 	m_renderComponent = AddComponent<GameEngine::SpriteRenderComponent>();
 	m_renderComponent->SetTexture(resourceType);
 	SetPos(sf::Vector2f(x, y));
-	m_renderComponent->SetZLevel(4);
+	SetSize(sf::Vector2f(50, 50));
+	m_renderComponent->SetZLevel(2);
+	AddComponent<GameEngine::CollidableComponent>();
 	GameEngine::GameEngineMain::GetInstance()->AddEntity(this);
 }
 

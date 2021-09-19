@@ -3,6 +3,7 @@
 
 #include "Game/GameComponents/CameraFocusComponent.h"
 #include "Game/GameComponents/PlayerMovementComponent.h"
+#include "GameEngine/EntitySystem/Components/CollidablePhysicsComponent.h"
 
 
 using namespace Game;
@@ -17,6 +18,8 @@ PlayerEntity::PlayerEntity()
 
     playerMovementComponent = AddComponent<PlayerMovementComponent>();
     playerMovementComponent->SetVelocity(1.f);
+
+	AddComponent<GameEngine::CollidablePhysicsComponent>();
 
 
 

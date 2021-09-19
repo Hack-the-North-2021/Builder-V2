@@ -23,7 +23,7 @@ namespace Game
 	protected:
 		vector<ResourceEntity*> resourceEntities;
 		const vector<GameEngine::eTexture::type> types = { GameEngine::eTexture::FOOD, GameEngine::eTexture::ROCK, GameEngine::eTexture::TREE, GameEngine::eTexture::BRONZE };
-		const int numResources = 100;
+		const int numResources = 1000;
 	};
 }
 

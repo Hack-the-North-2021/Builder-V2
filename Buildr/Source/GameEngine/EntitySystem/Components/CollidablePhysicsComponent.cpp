@@ -4,6 +4,9 @@
 #include "GameEngine/EntitySystem/Entity.h"
 
 #include <vector>
+#include <iostream>
+using std::cout;
+using std::endl;
 
 using namespace GameEngine;
 
@@ -45,6 +48,7 @@ void CollidablePhysicsComponent::Update()
 		AABBRect intersection;
 		AABBRect myBox = GetWorldAABB();
 		AABBRect colideBox = colComponent->GetWorldAABB();
+		// cout << colideBox.height << " " << colideBox.width << endl;
 		if (myBox.intersects(colideBox, intersection))
 		{
 			sf::Vector2f pos = GetEntity()->GetPos();
