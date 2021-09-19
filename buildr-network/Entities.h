@@ -27,6 +27,7 @@ struct Resource {
     int hp;
     float x, y;
 };
+NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(Resource, resource_type, hp, x, y)
 
 enum BuildingType {
     BuildingType_Grass = 1,
@@ -40,4 +41,5 @@ struct Building {
     BuildingType building_type;
     float x, y;
 };
+NLOHMANN_DEFINE_TYPE_NON_INTRUSIVE(Building,  building_type, x, y)
 

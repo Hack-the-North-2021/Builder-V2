@@ -4,7 +4,9 @@
 #include "Game/GameComponents/CameraFocusComponent.h"
 #include "Game/GameComponents/PlayerMovementComponent.h"
 #include "GameEngine/EntitySystem/Components/CollidablePhysicsComponent.h"
+#include "GameEngine/EntitySystem/Components/SoundComponent.h"
 #include <GameEngine/GameEngineMain.h>
+
 #include <iostream>
 
 
@@ -18,9 +20,10 @@ PlayerEntity::PlayerEntity():tree(0),rock(0),food(0),bronze(0)
 	m_renderComponent->SetTexture(GameEngine::eTexture::Player);
 	SetSize(sf::Vector2f(70, 80));
 	m_renderComponent->SetZLevel(2);
-
+	GameEngine::SoundComponent* const soundComponent = AddComponent<Game::SoundComponent>();
+	soundComponent->SetNumSimultaneousSounds(2);
     playerMovementComponent = AddComponent<PlayerMovementComponent>();
-    playerMovementComponent->SetVelocity(1.f);
+    playerMovementComponent->SetVelocity(0.35f);
 
 	AddComponent<GameEngine::CollidablePhysicsComponent>();
 

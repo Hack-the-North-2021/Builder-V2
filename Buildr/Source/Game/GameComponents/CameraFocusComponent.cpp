@@ -32,8 +32,8 @@ void CameraFocusComponent::Update()
 	float dt = GameEngine::GameEngineMain::GetTimeDelta();
 	sf::Vector2f camPos = GameEngine::CameraManager::GetInstance()->GetCameraView().getCenter();
 	sf::Vector2f entityPos = GetEntity()->GetPos();
-	float fx = camPos.x + 0.1* (entityPos.x - camPos.x);
-	float fy = camPos.y + 0.1* (entityPos.y - camPos.y);
+	float fx = camPos.x + 0.015f* (entityPos.x - camPos.x);
+	float fy = camPos.y + 0.015f* (entityPos.y - camPos.y);
 
 
 	GameEngine::CameraManager::GetInstance()->GetCameraView().setCenter(sf::Vector2f(fx,fy));

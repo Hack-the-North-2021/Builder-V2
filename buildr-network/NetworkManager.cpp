@@ -1,4 +1,6 @@
 #include "NetworkManager.h"
+#include "Logger.h"
+#include <iostream>
 
 enum h_NetworkCommands {
     H_PLAYER_UPDATE = 1,
@@ -23,7 +25,7 @@ NetworkManager::getInstance()
 }
 
 NetworkManager::NetworkManager() 
-	:server(8080, std::map<int, NetworkCallback>())
+    : server(8080, { {H_PLAYER_UPDATE, handlePlayerUpdate} })
 {
 	server.OpenConnection();
 }
@@ -52,52 +54,64 @@ NetworkManager::addBuilding(BuildingType building_type, float x, float y)
 }
 
 void
-NetworkManager::broadcastMessage(const nlohmann::json& j)
+broadcastMessage(const nlohmann::json& j)
 {
-    for (const auto &[k, v] : players_index) server.SendRawMessage(v.player_id, j);
+    NetworkManager* nm = NetworkManager::getInstance();
+    for (const auto &[k, v] : nm->players_index) nm->server.SendRawMessage(v.player_id, j);
 }
 
 void
-NetworkManager::broadcastMessage(int ignore_id, const nlohmann::json& j)
+broadcastMessage(int ignore_id, const nlohmann::json& j)
 {
-    for (const auto &[k, v] : players_index) {
+    NetworkManager* nm = NetworkManager::getInstance();
+    for (const auto &[k, v] : nm->players_index) {
         if (k == ignore_id) continue;
-        server.SendRawMessage(v.player_id, j);   
+        nm->server.SendRawMessage(v.player_id, j);   
     }
 }
 
 void
-NetworkManager::handlePlayerUpdate(int client_id, const nlohmann::json& j)
+handlePlayerUpdate(int client_id, const nlohmann::json& j)
 {
 }
 
 void
-NetworkManager::handleResourceUpdate(int client_id, const nlohmann::json& j)
+handleResourceUpdate(int client_id, const nlohmann::json& j)
 {
 }
 
 void
-NetworkManager::handleBuildingUpdate(int client_id, const nlohmann::json& j)
+handleBuildingUpdate(int client_id, const nlohmann::json& j)
 {
 }
 
 void
-NetworkManager::sendPlayerUpdate(int player_id, std::vector<s_PlayerUpdate> player_updates)
+sendPlayerUpdate(int player_id, std::vector<s_PlayerUpdate> player_updates)
 {
-    //nlohmann::json j = {
-    //    {"cmd", S_PLAYER_UPDATE},
-    //    {"updates", player_updates}
-    //};
-    //broadcastMessage(player_id, j);
+    nlohmann::json j = {
+        {"cmd", S_PLAYER_UPDATE},
+        {"updates", player_updates}
+    };
+    broadcastMessage(player_id, j);
 }
 
 void
-NetworkManager::sendResourceUpdate(std::vector<s_ResourceUpdate> resource_updates)
+sendResourceUpdate(int player_id, std::vector<s_ResourceUpdate> resource_updates)
 {
+    nlohmann::json j = {
+        {"cmd", S_RESOURCE_UPDATE},
+        {"updates", resource_updates}
+    };
+    broadcastMessage(player_id, j);
 }
 
 void
-NetworkManager::sendBuildingUpdate(std::vector<s_BuildingUpdate> building_updates)
+sendBuildingUpdate(int player_id, std::vector<s_BuildingUpdate> building_updates)
 {
+    nlohmann::json j = {
+        {"cmd", S_BUILDING_UPDATE},
+        {"updates", building_updates}
+    };
+    broadcastMessage(player_id, j);
 }
 

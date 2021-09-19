@@ -1,4 +1,5 @@
 #include <cstring>
+#include <cstdio>
 
 #include "NetworkServer.h"
 #include "Logger.h"
@@ -48,15 +49,16 @@ NetworkServer::Listen()
 {
     int client_sock;
     int addrlen = sizeof(address);
+    std::thread thrs[20];
+    int i = 0;
 
     while (true) {
         Logger::Debug("Listening to connections");
         if ((client_sock = accept(server_fd, (Sockaddr*)&address, (socklen_t*)&addrlen)) < 0)
             Logger::ErrorDie("Error accepting connection");
 
-        std::thread worker(&NetworkServer::HandleConnection, this, client_sock);
-
-        worker.join();
+        thrs[i] = std::thread (&NetworkServer::HandleConnection, this, client_sock);
+        i++;
     }
 }
 
@@ -72,7 +74,7 @@ NetworkServer::HandleConnection(int client_sock)
         if ((read_size = recv(client_sock, recv_msg, MAX_PACKET, 0)) <= 0)
             continue;
 
-        Logger::Debug(std::string(recv_msg));
+        //Logger::Debug(std::string(recv_msg));
         DispatchCmd(client_sock, recv_msg);
     }
 }
@@ -91,7 +93,10 @@ NetworkServer::DispatchCmd(int client_sock, const std::string& json_string)
         }
 
     } catch (nlohmann::json::parse_error& e) {
-        Logger::Warning("Malformed json string");
+        //Logger::Warning("Malformed json string");
+    }
+    catch (...) {
+		//Logger::Warning("Uncaught exception in dispatch");
     }
 }
 
