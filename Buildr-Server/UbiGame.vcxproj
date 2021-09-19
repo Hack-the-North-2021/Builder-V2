@@ -170,7 +170,6 @@ XCOPY "$(SolutionDir)..\SFML-2.5.0\bin" "$(TargetDir)" /S /Y /I</Command>
     <ClCompile Include="Source\Game\GameComponents\Resource-Component.cpp" />
     <ClCompile Include="Source\GameEngine\Util\randgen.cc" />
     <ClCompile Include="Source\Game\GameComponents\PlayerMovementComponent.cpp" />
-    <ClCompile Include="Source\Game\GameEntities\MapEntity.cpp" />
     <ClCompile Include="Source\GameEngine\EntitySystem\Components\ButtonComponent.cpp" />
     <ClCompile Include="Source\GameEngine\EntitySystem\Components\TextRenderComponent.cpp" />
     <ClCompile Include="Source\GameEngine\Util\ButtonManager.cpp" />
@@ -190,10 +189,7 @@ XCOPY "$(SolutionDir)..\SFML-2.5.0\bin" "$(TargetDir)" /S /Y /I</Command>
     <ClCompile Include="Source\Game\GameComponents\CameraFocusComponent.cpp" />
     <ClCompile Include="Source\Game\GameEntities\NetworkEntity.cpp" />
     <ClCompile Include="Source\Game\GameEntities\Player.cpp" />
-    <ClCompile Include="Source\Game\GameEntities\PlayerEntity.cpp" />
     <ClCompile Include="Source\Game\GameEntities\Resource.cpp" />
-    <ClCompile Include="Source\Game\GameEntities\ResourceEntity.cpp" />
-    <ClCompile Include="Source\Game\GameEntities\ResourceManagerEntity.cpp" />
     <ClCompile Include="Source\Game\GameNetwork\NetworkClient.cpp" />
     <ClCompile Include="Source\Game\GameNetwork\NetworkManager.cpp" />
     <ClCompile Include="Source\Game\GameUtils\Logger.cpp" />
@@ -207,7 +203,6 @@ XCOPY "$(SolutionDir)..\SFML-2.5.0\bin" "$(TargetDir)" /S /Y /I</Command>
     <ClInclude Include="Source\Game\GameComponents\Resource-Component.h" />
     <ClInclude Include="Source\GameEngine\Util\randgen.h" />
     <ClInclude Include="Source\Game\GameComponents\PlayerMovementComponent.h" />
-    <ClInclude Include="Source\Game\GameEntities\MapEntity.h" />
     <ClInclude Include="Source\GameEngine\EntitySystem\Components\ButtonComponent.h" />
     <ClInclude Include="Source\GameEngine\EntitySystem\Components\TextRenderComponent.h" />
     <ClInclude Include="Source\GameEngine\Util\ButtonManager.h" />
@@ -231,10 +226,7 @@ XCOPY "$(SolutionDir)..\SFML-2.5.0\bin" "$(TargetDir)" /S /Y /I</Command>
     <ClInclude Include="Source\Game\GameComponents\CameraFocusComponent.h" />
     <ClInclude Include="Source\Game\GameEntities\NetworkEntity.h" />
     <ClInclude Include="Source\Game\GameEntities\Player.h" />
-    <ClInclude Include="Source\Game\GameEntities\PlayerEntity.h" />
     <ClInclude Include="Source\Game\GameEntities\Resource.h" />
-    <ClInclude Include="Source\Game\GameEntities\ResourceEntity.h" />
-    <ClInclude Include="Source\Game\GameEntities\ResourceManagerEntity.h" />
     <ClInclude Include="Source\Game\GameNetwork\NetworkClient.h" />
     <ClInclude Include="Source\Game\GameNetwork\NetworkManager.h" />
     <ClInclude Include="Source\Game\GameUtils\Logger.h" />

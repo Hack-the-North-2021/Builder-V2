@@ -1,10 +1,8 @@
 #pragma once
 #include "GameEngine/EntitySystem/Entity.h"
-
+#include "GameNetwork/NetworkManager.h"
 #include <SFML/System/Vector2.hpp>
 #include <vector>
-#include "Game/GameEntities/ResourceManagerEntity.h"
-#include "Game/GameEntities/MapEntity.h"
 
 namespace Game
 {
@@ -17,20 +15,7 @@ namespace Game
 		GameBoard();
 		virtual ~GameBoard();
 
-		void Update();		
-
-		
-
-		bool IsGameOver() { return false; }
-
-	protected: 
-		void CreateBackGround();
-		void UpdateBackGround();
-
-		PlayerEntity* player;
-		MapEntity* map;
-		ResourceManagerEntity* resourceManager;
-
+		void Update();
 		
 	};
 }

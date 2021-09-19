@@ -17,7 +17,13 @@ Player::~Player() {
 }
 
 void Player::mine(Resource* res) {
-	
+	resources[res->type] += 1;
+	res->health -= 1;
+	if (res->health <= 0) {
+		// tell everyone to destroy this entity
+
+		GameEngine::GameEngineMain::GetInstance()->RemoveEntity(res);
+	}
 }
 
 playerData Player::getNetworkData() {

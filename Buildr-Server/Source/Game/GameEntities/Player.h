@@ -11,7 +11,7 @@ typedef struct playerData {
 
 enum resourceIndex
 {
-	Wood = 0,
+	Forest = 0,
 	Metal = 1,
 	Gold = 2,
 	Food = 3

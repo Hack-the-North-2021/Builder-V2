@@ -1,17 +1,20 @@
 #pragma once
 #include "Game/GameEntities/NetworkEntity.h"
 
-class Resource : NetworkEntity
+typedef struct resourceData {
+	int id;
+	int hp;
+	float x;
+	float y;
+	int type;
+} playerData;
+
+class Resource : public NetworkEntity
 {
 public:
-	Resource();
-	~Resource();
-
+	int health;
 	int id;
 	int type;
-	int health;
-	sf::Vector2f location;
 
 	void broadcastState();
-
 };

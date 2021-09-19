@@ -1,13 +1,5 @@
 #include "Resource.h"
 
-Resource::Resource() {
-
-}
-
-Resource::~Resource() {
-
-}
-
 void Resource::broadcastState() {
-
+	// give everyone an update on this item
 }

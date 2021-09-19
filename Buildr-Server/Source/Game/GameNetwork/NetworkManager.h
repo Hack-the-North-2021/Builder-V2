@@ -18,5 +18,4 @@ private:
 	std::map<int, Resource*> resourceIds;
 
 	NetworkManager();
-
 };
